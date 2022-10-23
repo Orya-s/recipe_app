@@ -17,18 +17,17 @@ class db:
     
     
     # I know this is not the right way to do it but sadly I didn't have the time to 
-    # write something else 
+    # write something better 
     # (my idea was creating a new table with the ingridients of each recipe and compare
-    # the names to the diet table, and with when compare the dietry restirctions to the category) 
+    # the names to the diet table, and with WHEN compare the dietry restirctions to the category) 
     def filter_rec(self, rec, dairy_free, gluten_free):
         for r in rec:
             try:
                 with self.connection.cursor() as cursor:
-                    query = f"SELECT * FROM diet WHERE name = {r}"
-                    cursor.execute(query)
+                    query = "SELECT * FROM diet d WHERE d.name=%s AND (d.category=%s OR d.category=%s);"
+                    cursor.execute(query, (r, dairy_free, gluten_free))
                     result = cursor.fetchall()
-                    print(result)
-                    if result is not None:
+                    if len(result) > 0:
                         return False
             except pymysql.Error as e:
                 print("Failed to select")  

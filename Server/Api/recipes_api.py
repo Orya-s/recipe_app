@@ -35,5 +35,14 @@ class RecipesAPI(API):
         
         
     def filter_diet(self, ingredients):
-        return db().filter_rec(ingredients, self.dairy_free, self.gluten_free)
+        dairy_filter = ""
+        gluten_filter = ""
+        
+        if(self.dairy_free == "true"):
+            dairy_filter = "dairy"
+        
+        if(self.gluten_free == "true"):
+            gluten_filter = "gluten"
+            
+        return db().filter_rec(ingredients, dairy_filter, gluten_filter)
      
