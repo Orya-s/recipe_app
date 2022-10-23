@@ -40,3 +40,8 @@ $(".checkbox").on('change', function() {
 const cleanInput = function() {
     $("#ingredient-input").val("")
 }
+
+$("body").on("click", ".dream-btn", function() {
+    let first = $(this).parent().siblings(".ingredients").text().trim().split(",")[0]
+    alert(first)
+})
