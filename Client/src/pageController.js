@@ -16,13 +16,24 @@ $("#getRecBtn").on("click", function() {
         alert("Please enter an ingredient name!")
     }
     else {
-        const recipes = pageData.init(ingredient, glutenFree, dairyFree).getRecipes().then((res) =>{
+        pageData.init(ingredient, glutenFree, dairyFree);
+        const recipes = pageData.getRecipes().then((res) => {
             cleanInput()
             rendPage.rendRecipes(recipes)
             return res
         })
     }
 })
+
+
+$(".checkbox").on('change', function() {
+    if ($(this).is(':checked')) {
+      $(this).attr('value', 'true');
+    } 
+    else {
+      $(this).attr('value', 'false');
+    }
+});
 
 
 const cleanInput = function() {
