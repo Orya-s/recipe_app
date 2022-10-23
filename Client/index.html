@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>recipe_app</title>
+    <!-- <link href="./src/favicon.ico" rel="icon" type="image/x-icon" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css"/>
+
+</head>
+
+  <body>
+    
+    <div class="header">
+      <div class="text-input">
+        <input class="recipes-filter" id="ingredientInput" type="text" placeholder="ingredient">
+      </div>
+      <label class="container">gluten free
+        <input id="gluten-checkbox" type="checkbox" value="false">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">dairy free
+        <input id="dairy-checkbox" type="checkbox" value="false">
+        <span class="checkmark"></span>
+      </label>
+      <button id="getRecBtn" class="glow-on-hover">Search!</button>
+    </div>
+
+   
+
+
+
+    <!-- Handlebars Containers -->
+    <div class="container">
+    </div>
+
+    
+    
+    
+    <!-- Handlebars Templates -->
+    
+    <script id="template" type="text/x-handlebars-template">
+      {{#each players}}
+
+            {{#if this.dreamTeam}}
+
+            {{else}}
+
+            {{/if}}
+       
+      {{/each}}
+    </script>
+
+
+ 
+
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="./src/api/ajaxCall.js"></script>
+    <script src="./src/api/API.js"></script>
+    <!-- <script src="./src/api/metadata.js"></script>
+    <script src="./src/api/dreamTeamApi.js"></script> -->
+
+    <script src="./src/appData.js"></script>
+    <script src="./src/pageView.js"></script>
+    <script src="./src/pageController.js"></script>
+
+  </body>
+</html>

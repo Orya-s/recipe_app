@@ -1,0 +1,360 @@
+body{
+    font-family: Georgia, serif;
+
+    display: grid;
+    grid-gap: clamp(0.3em, 2vh, 1em);
+    padding-left: 1em;
+    padding-right: 1em;
+    grid-template-areas: 
+    "h h h"
+    "t t t"
+    "b b b" 
+    "b b b" 
+    "b b b" ;
+}
+
+.header {
+    grid-area: h;
+}
+
+.title-container {
+    grid-area: t;
+    font-size: 1.33em;
+}
+
+.cards-container {
+    grid-area: b;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 400px);
+    grid-auto-rows: 400px;
+    gap: 6px;
+}
+
+.cards {
+    border: 8px solid rgb(57, 56, 56);
+    background: linear-gradient( #1d418ad5,white , #c8102fd0);
+    /* background-color: rgba(7, 2, 27, 0.865); */
+    padding: 10px;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    margin: 0.25em;
+    font-size: 1.3em;
+    position: relative;
+}
+
+.jersey {
+    text-align: center;
+    margin: 5px
+}
+  
+.fullName {
+    text-align: center;
+}
+  
+.position {
+    text-align: center;
+    margin: 10px;
+}
+
+img{
+    width: 100%;
+    height: 260px;
+    border-radius: 4px;
+}
+  
+
+/*inputs*/
+.text-input {
+    position: relative;
+    display: inline;
+    margin-top: 50px;
+}
+  
+.recipes-filter {
+    font-size: 95%;
+    font-family: sans-serif;
+    display: inline-block;
+    width: 20%;
+    height: 35px;
+    box-sizing: border-box;
+    outline: none;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    padding: 10px 10px 10px 100px;
+    transition: all 0.1s ease-out;    
+}
+
+
+.recipes-filter + label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 40px;
+    line-height: 40px;
+    color: white;
+    border-radius: 3px 0 0 3px;
+    padding: 0 20px;
+    transform: translateZ(0) translateX(0);
+    transition: all 0.3s ease-in;
+    transition-delay: 0.2s;
+}
+
+.recipes-filter:focus + label {
+    transform: translateY(-120%) translateX(0%);
+    border-radius: 3px;
+    transition: all 0.1s ease-out;
+}
+  
+.recipes-filter:focus {
+    padding: 10px;
+    transition: all 0.3s ease-out;
+    transition-delay: 0.2s;
+}
+
+
+
+/* checkmark */
+
+.container {
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    margin-left: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: sans-serif;
+    color: rgb(114, 114, 114);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+  
+  /* Hide the browser's default checkbox */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+  
+  /* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+  
+  /* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+  
+  /* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+  
+  /* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+  
+  /* Style the checkmark/indicator */
+.container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+/*button*/
+
+.glow-on-hover {
+    width: 15%;
+    height: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: rgb(85, 83, 83);
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 4px;
+}
+  
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, white, #002bff, white, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 4px;
+}
+  
+.glow-on-hover:active {
+    color: rgb(93, 89, 89)
+}
+  
+.glow-on-hover:active:after {
+    background: transparent;
+}
+  
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+  
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(87, 84, 84);
+    left: 0;
+    top: 0;
+    border-radius: 4px;
+}
+  
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+  
+
+#DreamTeamBtn {
+    position: absolute;
+    right: 0;
+}
+
+
+
+
+.image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+  
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%)
+}
+  
+.cards:hover .image {
+    opacity: 0.3;
+}
+  
+.cards:hover .middle {
+    opacity: 1;
+}
+
+.dream-btn {
+    color: white;
+    font-size: 14px;
+    padding: 16px 16px;
+    border-radius: 3px;
+    border: 0;
+    cursor: pointer;
+}
+  
+.add-dream {
+    background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+}
+
+.remove-dream {
+    background-color: rgb(198, 195, 195);
+    padding: 16px 5px;
+    font-size: 12px;
+}
+
+
+
+.fa {
+    position: absolute;
+    right: 0.9rem;
+    cursor: pointer;
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+  
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 35%;
+}
+  
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.stats {
+    font-size: smaller;
+}
