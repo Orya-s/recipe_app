@@ -10,6 +10,21 @@ $("#getRecBtn").on("click", function() {
     const ingredient = $("#ingredient-input").val()
     const glutenFree = $("#gluten-checkbox").val()
     const dairyFree = $("#dairy-checkbox").val()
-    const recipes = pageData.init(ingredient, glutenFree, dairyFree).getRecipes()
-    rendPage.rendRecipes(recipes)
+
+    if (ingredient == "") {
+        console.warn("ingredient name is missing from input")
+        alert("Please enter an ingredient name!")
+    }
+    else {
+        const recipes = pageData.init(ingredient, glutenFree, dairyFree).getRecipes().then((res) =>{
+            cleanInput()
+            rendPage.rendRecipes(recipes)
+            return res
+        })
+    }
 })
+
+
+const cleanInput = function() {
+    $("#ingredient-input").val("")
+}
