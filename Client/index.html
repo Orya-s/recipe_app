@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>recipe_app</title>
-    <!-- <link href="./src/favicon.ico" rel="icon" type="image/x-icon" /> -->
+    <link href="./src/favicon.png" rel="icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="styles.css"/>
@@ -13,7 +13,7 @@
     
     <div class="header">
       <div class="text-input">
-        <input class="recipes-filter" id="ingredientInput" type="text" placeholder="ingredient">
+        <input class="recipes-filter" id="ingredient-input" type="text" placeholder="ingredient">
       </div>
       <label class="container">gluten free
         <input id="gluten-checkbox" type="checkbox" value="false">
@@ -31,7 +31,7 @@
 
 
     <!-- Handlebars Containers -->
-    <div class="container">
+    <div class="recipes-container">
     </div>
 
     
@@ -39,7 +39,7 @@
     
     <!-- Handlebars Templates -->
     
-    <script id="template" type="text/x-handlebars-template">
+    <script id="recipes-template" type="text/x-handlebars-template">
       {{#each players}}
 
             {{#if this.dreamTeam}}
