@@ -14,7 +14,7 @@ const data = function() {
         let recipesPromise = recipes.getData()
         return await Promise.all([recipesPromise]).then(function(res) {
             recipes = res[0]
-            return {recipes: res[0]}
+            return {results: res[0]}
         })
     }
 

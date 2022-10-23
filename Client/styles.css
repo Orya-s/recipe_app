@@ -6,11 +6,11 @@ body{
     padding-left: 1em;
     padding-right: 1em;
     grid-template-areas: 
-    "h h h"
-    "t t t"
-    "b b b" 
-    "b b b" 
-    "b b b" ;
+    "h h h h"
+    "t t t t"
+    "b b b b" 
+    "b b b b" 
+    "b b b b" ;
 }
 
 .header {
@@ -22,11 +22,11 @@ body{
     font-size: 1.33em;
 }
 
-.cards-container {
+.recipes-container {
     grid-area: b;
     display: grid;
-    grid-template-columns: repeat(auto-fit, 400px);
-    grid-auto-rows: 400px;
+    grid-template-columns: repeat(auto-fit, 290px);
+    grid-auto-rows: 490px;
     gap: 6px;
 }
 
@@ -43,18 +43,25 @@ body{
     position: relative;
 }
 
-.jersey {
+.video {
     text-align: center;
-    margin: 5px
+    margin: 5px;
+    position:absolute;
+    left: 0;
+    bottom: 0;
+    font-size: 15px;
 }
   
-.fullName {
+.title {
     text-align: center;
+    /* font-size: ; */
 }
   
-.position {
-    text-align: center;
+.ingredients {
+    /* text-align: center; */
     margin: 10px;
+    font-size: 60%;
+
 }
 
 img{
@@ -252,10 +259,10 @@ img{
 }
   
 
-#DreamTeamBtn {
+/* #DreamTeamBtn {
     position: absolute;
     right: 0;
-}
+} */
 
 
 
@@ -263,7 +270,10 @@ img{
 .image {
     opacity: 1;
     display: block;
-    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    /* height: 20%; */
     transition: .5s ease;
     backface-visibility: hidden;
 }
@@ -289,7 +299,7 @@ img{
 .dream-btn {
     color: white;
     font-size: 14px;
-    padding: 16px 16px;
+    padding: 10px 10px;
     border-radius: 3px;
     border: 0;
     cursor: pointer;

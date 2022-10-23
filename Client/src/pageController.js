@@ -18,8 +18,9 @@ $("#getRecBtn").on("click", function() {
     else {
         pageData.init(ingredient, glutenFree, dairyFree);
         const recipes = pageData.getRecipes().then((res) => {
+            console.log(res);
             cleanInput()
-            rendPage.rendRecipes(recipes)
+            rendPage.rendRecipes(res)
             return res
         })
     }

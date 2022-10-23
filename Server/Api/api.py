@@ -5,7 +5,6 @@ import requests
 class API:
     def __init__(self, url):
         self.url = url
-        self.headers={"Content-Type": "application/json"}
 
 
     def call_api(self, attempts = 0):

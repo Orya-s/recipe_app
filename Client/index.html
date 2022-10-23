@@ -40,19 +40,25 @@
     <!-- Handlebars Templates -->
     
     <script id="recipes-template" type="text/x-handlebars-template">
-      {{#each result}}
-        <div class="title">{{this.title}}</div>
-        <div class="image">
-          <img src={{this.href}}>
+      {{#each results}}
+        <div class="cards">
+          <div class="title">{{this.title}}</div>
+          <div >
+            <img class="image" src={{this.thumbnail}} 
+            onerror="this.onerror=null;this.src='https://img.freepik.com/premium-vector/knife-fork-dishware-isolated-white-background-icon-set-simple-black-shadow-shape-silhouette-kitchen-eating-equipment-logo-concept-flat-style-vector-illustration_550143-935.jpg?w=2000';"/>
+            <button class="dream-btn add-dream" dreamTeam="false">Get first ingridient</button>
+          </div>
+          <div>Ingredients:</div>
+          <div class="ingredients">{{this.ingredients}}</div>
+          <a href={{this.href}} class="video">Recipe video</a>
+
+  <!--  
+              {{#if this.dreamTeam}}
+
+              {{else}}
+
+              {{/if}} -->
         </div>
-
-<!--  
-            {{#if this.dreamTeam}}
-
-            {{else}}
-
-            {{/if}} -->
-       
       {{/each}}
     </script>
 

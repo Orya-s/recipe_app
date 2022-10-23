@@ -5,11 +5,11 @@ Renderer is a class which should render each section of the user page through Ha
 
 const dataRender = function() {
 
-    function rendRecipes(players) {        // regular rend with empty
+    function rendRecipes(recipes) {        
         $(".recipes-container").empty();
         const source = $('#recipes-template').html();
         const template = Handlebars.compile(source);
-        const newHTML = template(players); 
+        const newHTML = template(recipes); 
         $('.recipes-container').append(newHTML);
     }
 
