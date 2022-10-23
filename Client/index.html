@@ -16,11 +16,11 @@
         <input class="recipes-filter" id="ingredient-input" type="text" placeholder="ingredient">
       </div>
       <label class="container">gluten free
-        <input id="gluten-checkbox" type="checkbox" value="false">
+        <input class="checkbox" id="gluten-checkbox" type="checkbox" value="false">
         <span class="checkmark"></span>
       </label>
       <label class="container">dairy free
-        <input id="dairy-checkbox" type="checkbox" value="false">
+        <input class="checkbox" id="dairy-checkbox" type="checkbox" value="false">
         <span class="checkmark"></span>
       </label>
       <button id="getRecBtn" class="glow-on-hover">Search!</button>
@@ -40,13 +40,18 @@
     <!-- Handlebars Templates -->
     
     <script id="recipes-template" type="text/x-handlebars-template">
-      {{#each players}}
+      {{#each result}}
+        <div class="title">{{this.title}}</div>
+        <div class="image">
+          <img src={{this.href}}>
+        </div>
 
+<!--  
             {{#if this.dreamTeam}}
 
             {{else}}
 
-            {{/if}}
+            {{/if}} -->
        
       {{/each}}
     </script>
@@ -61,8 +66,7 @@
 
     <script src="./src/api/ajaxCall.js"></script>
     <script src="./src/api/API.js"></script>
-    <!-- <script src="./src/api/metadata.js"></script>
-    <script src="./src/api/dreamTeamApi.js"></script> -->
+    <script src="./src/api/metadata.js"></script>
 
     <script src="./src/appData.js"></script>
     <script src="./src/pageView.js"></script>
